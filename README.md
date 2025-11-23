@@ -17,7 +17,7 @@ sudo snap install sysx --classic
 
 ### From Source
 
-git clone https://github.com/yourusername/sysx.git
+git clone https://github.com/ayushraj-ece/sysx.git
 cd sysx
 pip install -e .
 
