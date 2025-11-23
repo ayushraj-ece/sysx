@@ -1,1 +1,22 @@
-[paste the yaml above]
+name: sysx
+base: core22
+version: '1.0.1'
+summary: Advanced system information and cleaning tool
+description: |
+  SysX provides detailed system information, network analysis, temperature reporting,
+  and cleanup tools directly from the terminal.
+
+grade: stable
+confinement: classic
+
+apps:
+  sysx:
+    command: bin/sysx
+
+parts:
+  sysx:
+    plugin: python
+    source: .
+    python-packages:
+      - psutil
+
