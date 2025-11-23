@@ -1,0 +1,37 @@
+name: sysx
+version: '1.0.0'
+summary: Terminal-based system diagnostics and cleaning utility
+description: |
+  SysX provides extremely detailed information about your Linux system,
+  network, security status, and storage. It includes a powerful cleaning
+  module to remove cache, logs, temporary files, and unnecessary leftovers.
+  
+  Features:
+  - Detailed system information (CPU, RAM, disk, kernel, hardware)
+  - Network diagnostics (interfaces, connections, routing)
+  - Security auditing (firewall, ports, failed logins, services)
+  - System cleaning (cache, logs, temp files, package leftovers)
+
+base: core22
+grade: stable
+confinement: classic
+
+apps:
+  sysx:
+    command: bin/sysx
+    environment:
+      PATH: "$SNAP/bin:$SNAP/usr/bin:$PATH"
+
+parts:
+  sysx:
+    plugin: python
+    source: .
+    requirements:
+      - requirements.txt
+    stage-packages:
+      - lsb-release
+      - util-linux
+      - pciutils
+      - usbutils
+      - net-tools
+      - iproute2
