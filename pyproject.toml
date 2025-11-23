@@ -36,9 +36,9 @@ dependencies = [
 sysx = "sysx.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/yourusername/sysx"
-Repository = "https://github.com/yourusername/sysx"
-Issues = "https://github.com/yourusername/sysx/issues"
+Homepage = "https://github.com/ayushraj-ece/sysx"
+Repository = "https://github.com/ayushraj-ece/sysx"
+Issues = "https://github.com/ayushraj-ece/sysx/issues"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
