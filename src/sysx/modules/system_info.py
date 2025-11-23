@@ -62,6 +62,18 @@ def show_system_info():
     cpu_percent = psutil.cpu_percent(interval=1, percpu=True)
     print_key_value("CPU Usage (Overall)", f"{psutil.cpu_percent(interval=0)}%")
     
+    # 🔥 NEW BLOCK: CPU + thermal sensor temperature readings
+    try:
+        temps = psutil.sensors_temperatures()
+        if temps:
+            for name, entries in temps.items():
+                for entry in entries:
+                    label = entry.label if entry.label else name
+                    if entry.current:
+                        print_key_value(f"Temperature ({label})", f"{entry.current}°C")
+    except Exception:
+        pass
+
     # Memory Information
     print_subheader("Memory Information")
     mem = psutil.virtual_memory()
@@ -136,3 +148,4 @@ def show_system_info():
                 print(f"  {line}")
     
     print()  # Empty line at end
+
