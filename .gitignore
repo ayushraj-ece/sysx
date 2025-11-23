@@ -47,3 +47,9 @@ htmlcov/
 .DS_Store
 Thumbs.db
 venv/
+
+# Snapcraft build artifacts
+parts/
+stage/
+prime/
+*.snap
