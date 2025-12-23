@@ -24,6 +24,9 @@ parts:
       - python3-venv
     stage-packages:
       - python3
-    python-packages:
-      - psutil
+
+    override-build: |
+      python3 -m pip install --upgrade pip
+      python3 -m pip install psutil
+      snapcraftctl build
 
