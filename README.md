@@ -12,25 +12,15 @@ SysX is a lightweight, terminal-based Linux utility that provides deep, structur
 ## PREREQUISITES
 
 ```bash
-# Ubuntu / Debian
-sudo apt update
-sudo apt install python3 python3-pip git -y
-```
+# Install base dependencies (works on most Linux distributions)
+sudo apt install -y python3 python3-pip git 2>/dev/null || \
+sudo dnf install -y python3 python3-pip git 2>/dev/null || \
+sudo pacman -S --noconfirm python python-pip git
 
-```bash
-# Fedora
-sudo dnf install python3 python3-pip git -y
-```
-
-```bash
-# Arch / Manjaro
-sudo pacman -S python python-pip git --noconfirm
-```
-
-```bash
 # Install pipx
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
+
 ```
 
 Restart your shell if pipx is not found.
