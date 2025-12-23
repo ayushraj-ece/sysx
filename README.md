@@ -9,55 +9,43 @@ SysX is a lightweight, terminal-based Linux utility that provides deep, structur
 
 ---
 
-## Prerequisites
-
-Install the required packages before installing SysX.
-
-### Ubuntu / Debian
+## PREREQUISITES
 
 ```bash
+# Ubuntu / Debian
 sudo apt update
-sudo apt install snapd git wget python3 python3-pip -y
-sudo systemctl enable --now snapd.socket
+sudo apt install python3 python3-pip git -y
 ```
 
-### Fedora
-
 ```bash
-sudo dnf install snapd git wget python3 python3-pip -y
-sudo ln -s /var/lib/snapd/snap /snap
-sudo systemctl enable --now snapd.socket
+# Fedora
+sudo dnf install python3 python3-pip git -y
 ```
 
-### Arch / Manjaro
+```bash
+# Arch / Manjaro
+sudo pacman -S python python-pip git --noconfirm
+```
 
 ```bash
-sudo pacman -S snapd git wget python python-pip --noconfirm
-sudo systemctl enable --now snapd.socket
+# Install pipx
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+```
+
+Restart your shell if pipx is not found.
+
+---
+
+## INSTALLATION
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/ayushraj-ece/sysx/main/scripts/install.sh | bash
 ```
 
 ---
 
-## Installation
-
-You can install SysX using Snap or directly through the .snap package.
-
-### Option 1 — Install via Snap Store
-
-```bash
-sudo snap install sysx --classic
-```
-
-### Option 2 — Install via Direct .snap Download
-
-```bash
-wget https://github.com/ayushraj-ece/sysx/releases/download/v1.0.0/sysx_1.0.0_amd64.snap
-sudo snap install sysx_1.0.0_amd64.snap --dangerous --classic
-```
-
----
-
-## Usage
+## USAGE
 
 ```bash
 sysx system
@@ -70,30 +58,31 @@ sysx --version
 
 ---
 
-## Features
+## FEATURES
 
-- System Information  
-  CPU, memory, disk usage, kernel, hardware info, processes
+System Information  
+CPU, memory, disk usage, kernel, hardware info, processes  
 
-- Network Information  
-  Interfaces, bandwidth usage, routing tables, active connections
+Network Information  
+Interfaces, bandwidth usage, routing tables, active connections  
 
-- Security Auditing  
-  Firewall status, open ports, failed logins, running services
+Security Auditing  
+Firewall status, open ports, failed logins, running services  
 
-- System Cleaning  
-  Cache cleanup, temporary files removal, log cleanup, leftover package purging
-
----
-
-## Contributors
-
-- Ayush Raj — Creator and Lead Developer  
-- Contributions are welcome. Submit a Pull Request on GitHub.
+System Cleaning  
+Cache cleanup  
+Temporary files removal  
+Log cleanup  
+Leftover package purging  
 
 ---
 
-## License
+## CONTRIBUTORS
+
+Ayush Raj — Creator and Lead Developer  
+
+---
+
+## LICENSE
 
 MIT License — see the LICENSE file for full details.
-
